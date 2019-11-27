@@ -67,15 +67,3 @@ spec:
          - exposedPort: 13132
          - exposedPort: 13133
      memoryLimit: "512M"
-  initContainers:
-  - name: remote-runtime-injector
-    image: "docker.io/eclipse/che-theia-endpoint-runtime-binary:7.4.0"
-    volumes:
-      - mountPath: "/remote-endpoint"
-        name: remote-endpoint
-        ephemeral: true
-    env:
-      - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
-        value: /remote-endpoint/plugin-remote-endpoint
-      - name: REMOTE_ENDPOINT_VOLUME_NAME
-        value: remote-endpoint

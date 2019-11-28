@@ -16,11 +16,7 @@ spec:
       public: true
       targetPort: 8080
       attributes:
-        protocol: ws
-        type: terminal
-        discoverable: false
-        secure: true
-        cookiesAuthEnabled: true
+        protocol: http
   containers:
    - name: mplab-rest-server
      image: "879521958254.dkr.ecr.us-east-1.amazonaws.com/mplab-rest-server:latest"

@@ -1,6 +1,6 @@
 apiVersion: v2
-name: xpress
 publisher: cherxp
+name: xpress
 version: 7.4.0
 type: Che Editor
 displayName: xpress-ide

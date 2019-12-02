@@ -17,11 +17,10 @@ spec:
       targetPort: 8080
       attributes:
         protocol: http
-        discoverable: true
         secure: true
         cookiesAuthEnabled: true
   containers:
    - name: mplab-rest-server
-     image: "879521958254.dkr.ecr.us-east-1.amazonaws.com/mplab-rest-server:latest"
+     image: "879521958254.dkr.ecr.us-east-1.amazonaws.com/mplab-rest-server"
      ports:
        - exposedPort: 8080

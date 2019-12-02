@@ -61,7 +61,7 @@ spec:
            name: plugins
      mountSources: true
      ports:
-         - exposedPort: 3100
+         - exposedPort: 3000
          - exposedPort: 3130
          - exposedPort: 13131
          - exposedPort: 13132

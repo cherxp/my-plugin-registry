@@ -20,6 +20,9 @@ spec:
   containers:
    - name: mplab-rest-server
      image: "879521958254.dkr.ecr.us-east-1.amazonaws.com/mplab-rest-server"
+     volumes:
+       - mountPath: "/home/projects"
+         name: xpressprojects
      mountSources: true
      ports:
        - exposedPort: 8080

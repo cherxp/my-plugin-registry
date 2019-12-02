@@ -24,7 +24,18 @@ spec:
   containers:
    - name: theia-ide
      image: "879521958254.dkr.ecr.us-east-1.amazonaws.com/xpress-test:latest"
+     env:
+         - name: THEIA_PLUGINS
+           value: local-dir:///plugins
+         - name: HOSTED_PLUGIN_HOSTNAME
+           value: 0.0.0.0
+         - name: HOSTED_PLUGIN_PORT
+           value: "3130"
+     volumes:
+         - mountPath: "/plugins"
+           name: plugins
      mountSources: true
      ports:
-         - exposedPort: 3000
+         - exposedPort: 3100
+         - exposedPort: 3130
      memoryLimit: "512M"

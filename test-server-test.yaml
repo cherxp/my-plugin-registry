@@ -1,0 +1,27 @@
+apiVersion: v2
+publisher: eclipse
+name: my-rest-server-plugin
+version: 0.0.1
+type: Che Plugin
+displayName: My rest Service
+title: Che rest Service Plugin
+description: Debug container.
+icon: https://www.eclipse.org/che/images/logo-eclipseche.svg
+repository: https://github.com/eclipse/che-machine-exec/
+firstPublicationDate: "2019-11-06"
+category: Other
+spec:
+  endpoints:
+   -  name: "mplab-rest-server"
+      public: true
+      targetPort: 8080
+      attributes:
+      protocol: http
+  containers:
+   - name: mplab-rest-server
+     image: "879521958254.dkr.ecr.us-east-1.amazonaws.com/mplab-rest-server"
+     mountSources: true
+     ports:
+       - exposedPort: 8080
+     memoryLimit: "2Gi"
+     

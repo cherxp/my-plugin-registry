@@ -59,8 +59,6 @@ spec:
      volumes:
          - mountPath: "/plugins"
            name: plugins
-         - mountPath: "/projects"
-           name: projects
      mountSources: true
      ports:
          - exposedPort: 3000

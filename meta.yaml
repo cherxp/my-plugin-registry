@@ -1,20 +1,20 @@
 apiVersion: v2
-publisher: eclipse
-name: che-theia
+publisher: cherxp
+name: che-xpress
 version: 7.4.0
 type: Che Editor
-displayName: theia-ide
-title: Eclipse Theia for Eclipse Che
-description: Eclipse Theia
+displayName: xpress-ide
+title: Xpress for Eclipse Che
+description: Xpress
 icon: https://raw.githubusercontent.com/theia-ide/theia/master/logo/theia-logo-no-text-black.svg?sanitize=true
 category: Editor
 repository: https://github.com/eclipse/che-theia
 firstPublicationDate: "2019-11-06"
 spec:
   endpoints:
-   -  name: "theia"
+   -  name: "xpress"
       public: true
-      targetPort: 3100
+      targetPort: 3000
       attributes:
         protocol: http
         type: ide
@@ -47,8 +47,8 @@ spec:
         protocol: http
         discoverable: false
   containers:
-   - name: theia-ide
-     image: "docker.io/eclipse/che-theia:7.4.0"
+   - name: xpress-ide
+     image: "879521958254.dkr.ecr.us-east-1.amazonaws.com/xpress-test:latest"
      env:
          - name: THEIA_PLUGINS
            value: local-dir:///plugins
@@ -59,23 +59,13 @@ spec:
      volumes:
          - mountPath: "/plugins"
            name: plugins
+         - mountPath: "/home/projects"
+           name: xpressprojects
      mountSources: true
      ports:
-         - exposedPort: 3100
+         - exposedPort: 3000
          - exposedPort: 3130
          - exposedPort: 13131
          - exposedPort: 13132
          - exposedPort: 13133
      memoryLimit: "512M"
-  initContainers:
-  - name: remote-runtime-injector
-    image: "docker.io/eclipse/che-theia-endpoint-runtime-binary:7.4.0"
-    volumes:
-      - mountPath: "/remote-endpoint"
-        name: remote-endpoint
-        ephemeral: true
-    env:
-      - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
-        value: /remote-endpoint/plugin-remote-endpoint
-      - name: REMOTE_ENDPOINT_VOLUME_NAME
-        value: remote-endpoint

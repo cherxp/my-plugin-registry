@@ -51,7 +51,7 @@ spec:
      image: "879521958254.dkr.ecr.us-east-1.amazonaws.com/xpress-test:latest"
      env:
          - name: THEIA_PLUGINS
-           value: local-dir:///plugins
+           value: local-dir:../plugins
          - name: HOSTED_PLUGIN_HOSTNAME
            value: 0.0.0.0
          - name: HOSTED_PLUGIN_PORT

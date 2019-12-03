@@ -23,6 +23,12 @@ spec:
      volumes:
        - mountPath: "/home/projects"
          name: xpressprojects
+       - mountPath: "/opt/microchip/xc8"
+         name: xc8
+       - mountPath: "/opt/microchip/xc16"
+         name: xc16
+       - mountPath: "/opt/microchip/xc32"
+         name: xc32
      mountSources: true
      ports:
        - exposedPort: 8080

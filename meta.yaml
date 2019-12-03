@@ -67,6 +67,10 @@ spec:
            name: xc16
          - mountPath: "/opt/microchip/xc32"
            name: xc32
+         - mountPath: "/home/lib/mplab_platform"
+           name: mplab_platform
+         - mountPath: "/home/lib/packs"
+           name: packs
      mountSources: true
      ports:
          - exposedPort: 3000

@@ -61,16 +61,6 @@ spec:
            name: plugins
          - mountPath: "/home/projects"
            name: xpressprojects
-         - mountPath: "/opt/microchip/xc8"
-           name: xc8
-         - mountPath: "/opt/microchip/xc16"
-           name: xc16
-         - mountPath: "/opt/microchip/xc32"
-           name: xc32
-         - mountPath: "/home/lib/mplab_platform"
-           name: mplab_platform
-         - mountPath: "/home/lib/packs"
-           name: packs
      mountSources: true
      ports:
          - exposedPort: 3000

@@ -61,8 +61,6 @@ spec:
            name: plugins
          - mountPath: "/home/projects"
            name: xpressprojects
-         - mountPath: "/opt/microchip/xc8"
-           name: xc8
      mountSources: true
      ports:
          - exposedPort: 3000

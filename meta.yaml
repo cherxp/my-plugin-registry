@@ -48,7 +48,7 @@ spec:
         discoverable: false
   containers:
    - name: xpress-ide
-     image: "879521958254.dkr.ecr.us-east-1.amazonaws.com/xpress:latest"
+     image: "879521958254.dkr.ecr.us-east-1.amazonaws.com/myorg/xpress:latest"
      env:
          - name: THEIA_PLUGINS
            value: local-dir:../plugins

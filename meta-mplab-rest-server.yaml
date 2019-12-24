@@ -17,12 +17,18 @@ spec:
       targetPort: 8080
       attributes:
       protocol: http
+  volumes:
+    - name: task-pv-storage
+      persistentVolumeClaim:
+       claimName: task-pv-claim
   containers:
    - name: mplab-rest-server
      image: "879521958254.dkr.ecr.us-east-1.amazonaws.com/myorg1/mplab-rest-server:latest"
      volumes:
        - mountPath: "/home/projects"
          name: xpressprojects
+       - mountPath: "/home/mounted"
+         name: task-pv-storage
      mountSources: true
      ports:
        - exposedPort: 8080

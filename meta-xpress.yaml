@@ -48,7 +48,7 @@ spec:
         discoverable: false
   containers:
    - name: xpress-ide
-     image: "192.168.0.102:5000/xpress2:latest"
+     image: "192.168.0.102:5000/xpress-full:latest"
      env:
          - name: THEIA_PLUGINS
            value: local-dir:../plugins

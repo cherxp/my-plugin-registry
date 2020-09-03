@@ -12,19 +12,33 @@ firstPublicationDate: "2020-08-26"
 category: Other
 spec:
   endpoints:
-   -  name: "mcc-plugin"
+   -  name: "mcc-port-1"
       public: true
-      targetPort: 8080
+      targetPort: 8090
+      attributes:
+        discoverable: false
+        protocol: ws
+   -  name: "mcc-port-2"
+      public: true
+      targetPort: 2000
+      attributes:
+        discoverable: false
+        protocol: http
+   -  name: "mcc-port-3"
+      public: true
+      targetPort: 30001
       attributes:
         discoverable: false
         protocol: http
   containers:
    - name: mcc-plugin
-     image: "localhost:5000/mcc/xpress-plugin-2608:latest"
+     image: "localhost:5000/xpress-plugin-03-sep:latest"
      volumes:
        - mountPath: "/home/projects"
          name: xpressprojects
      mountSources: true
      ports:
-       - exposedPort: 8080
+       - exposedPort: 8090
+       - exposedPort: 2000
+       - exposedPort: 30001
      memoryLimit: "2Gi"

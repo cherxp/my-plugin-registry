@@ -12,24 +12,27 @@ firstPublicationDate: "2020-08-26"
 category: Other
 spec:
   endpoints:
-   -  name: "mcc-port-1"
+   -  name: "xpress-ws"
       public: true
       targetPort: 8090
       attributes:
-        discoverable: false
         protocol: ws
-   -  name: "mcc-port-2"
+        secure: false
+        discoverable: false
+   -  name: "mcc-1"
       public: true
       targetPort: 2000
       attributes:
-        discoverable: false
         protocol: http
-   -  name: "mcc-port-3"
+        secure: false
+        discoverable: false
+   -  name: "mcc-2"
       public: true
       targetPort: 30001
       attributes:
-        discoverable: false
         protocol: http
+        secure: false
+        discoverable: false
   containers:
    - name: mcc-plugin
      image: "localhost:5000/xpress-plugin-03-sep:latest"

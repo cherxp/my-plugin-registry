@@ -46,11 +46,23 @@ spec:
       attributes:
         protocol: http
         discoverable: false
-    -  name: "ext-apps-websocket-server"
+    -  name: "mcc-port-1"
       public: true
       targetPort: 8090
       attributes:
         protocol: ws
+        discoverable: false
+    -  name: "mcc-port-2"
+      public: true
+      targetPort: 2000
+      attributes:
+        protocol: http
+        discoverable: false
+    -  name: "mcc-port-2"
+      public: true
+      targetPort: 30001
+      attributes:
+        protocol: http
         discoverable: false
   containers:
    - name: xpress-ide
@@ -77,4 +89,6 @@ spec:
          - exposedPort: 8080
          - exposedPort: 9003
          - exposedPort: 8090
+         - exposedPort: 2000
+         - exposedPort: 30001
      memoryLimit: "2Gi"

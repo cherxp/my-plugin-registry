@@ -35,7 +35,7 @@ spec:
         discoverable: false
   containers:
    - name: mcc-plugin
-     image: "localhost:5000/xpress-plugin-03-sep:latest"
+     image: "localhost:5000/mcc/xpress-plugin-04-sep:latest"
      volumes:
        - mountPath: "/home/projects"
          name: xpressprojects

@@ -53,20 +53,6 @@ spec:
         protocol: ws
         secure: false
         discoverable: false
-   -  name: "mcc-1"
-      public: true
-      targetPort: 2000
-      attributes:
-        protocol: http
-        secure: false
-        discoverable: false
-   -  name: "mcc-2"
-      public: true
-      targetPort: 30001
-      attributes:
-        protocol: http
-        secure: false
-        discoverable: false
   containers:
    - name: xpress-ide
      image: "453345707098.dkr.ecr.us-west-2.amazonaws.com/xpress/dev/xpress-image-beta-5.45-1012-v2:latest"
@@ -92,6 +78,4 @@ spec:
          - exposedPort: 8080
          - exposedPort: 9003
          - exposedPort: 8090
-         - exposedPort: 2000
-         - exposedPort: 30001
      memoryLimit: "2Gi"

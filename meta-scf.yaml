@@ -28,4 +28,7 @@ spec:
         value: 3001
       - name: SEED
         value: /app/libraries
+     volumes:
+       - mountPath: "/app/libraries"
+         name: mcc-libraries
      memoryLimit: "2Gi"

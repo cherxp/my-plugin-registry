@@ -26,4 +26,6 @@ spec:
      env:
       - name: PORT
         value: 3001
+      - name: SEED
+        value: /app/libraries
      memoryLimit: "2Gi"

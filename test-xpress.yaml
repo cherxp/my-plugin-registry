@@ -22,6 +22,30 @@ spec:
         cookiesAuthEnabled: true
         discoverable: false
    -  name: "theia-dev"
+apiVersion: v2
+publisher: cherxp
+name: che-xpress
+version: 7.4.0
+type: Che Editor
+displayName: xpress-ide
+title: Xpress for Eclipse Che
+description: Xpress
+icon: https://raw.githubusercontent.com/theia-ide/theia/master/logo/theia-logo-no-text-black.svg?sanitize=true
+category: Editor
+repository: https://github.com/eclipse/che-theia
+firstPublicationDate: "2019-11-06"
+spec:
+  endpoints:
+   -  name: "xpress"
+      public: true
+      targetPort: 3000
+      attributes:
+        protocol: http
+        type: ide
+        secure: true
+        cookiesAuthEnabled: true
+        discoverable: false
+   -  name: "theia-dev"
       public: true
       targetPort: 3130
       attributes:
@@ -48,7 +72,7 @@ spec:
         discoverable: false
   containers:
    - name: xpress-ide
-     image: "453345707098.dkr.ecr.us-west-2.amazonaws.com/xpress/dev/xpress-image-16dec:latest"
+     image: "453345707098.dkr.ecr.us-west-2.amazonaws.com/xpress/stage/xpress-image-beta-v2.0-rc5-v2:latest"
      env:
          - name: THEIA_PLUGINS
            value: local-dir:../plugins
@@ -71,4 +95,4 @@ spec:
          - exposedPort: 8080
          - exposedPort: 9003
          - exposedPort: 8090
-     memoryLimit: "2Gi"
+     memoryLimit: "8Gi"
